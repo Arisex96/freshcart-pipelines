@@ -2,4 +2,6 @@ pandas
 scikit-learn
 pytest
 pika
-mage-ai
+# 0.9.80 installs cleanly on Python 3.12; unpinned, pip backtracks to an old
+# mage-ai that needs pyarrow 10, which has no Python 3.12 wheel
+mage-ai==0.9.80
