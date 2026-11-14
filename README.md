@@ -164,8 +164,8 @@ freshcart-pipelines/
 └── .github/workflows/ci.yml
 ```
 
-`iris_project/` also contains Mage's own scaffold files from `mage init` (`io_config.yaml`, the example
-`titanic` pipeline, empty `__init__.py` files); they are left as Mage created them.
+`iris_project/` also contains Mage's own scaffold files from `mage init` (`io_config.yaml`, `metadata.yaml`,
+empty `__init__.py` files); Mage's Titanic demo pipeline was removed because the assignment does not use it.
 
 ## 9. Installing requirements.txt
 
@@ -296,7 +296,7 @@ Simplest local setup (Docker Desktop must be running), from any folder:
 
 ```bash
 docker run -d --name freshcart-rabbit -p 5672:5672 rabbitmq:3-alpine   # start a broker on localhost:5672
-docker logs freshcart-rabbit | grep "Server startup complete"           # wait until this line appears
+docker logs freshcart-rabbit | Select-String "Server startup complete"  # PowerShell; wait until this line appears
 ```
 
 Both scripts connect to `amqp://guest:guest@localhost:5672/` by default. To use another broker (e.g. a CloudAMQP free
