@@ -1,8 +1,10 @@
 import pandas as pd
 from sklearn.datasets import load_iris
 
-# Import Mage's decorators only if they aren't already loaded,
-# so the file works both inside and outside Mage
+# One-line version for students: “If Mage hasn’t already provided the data_loader
+# and test labels, import them, so the file works both inside and outside Mage.
+
+# Import Mage's decorators only if they aren't already loaded
 if 'data_loader' not in globals():
     from mage_ai.data_preparation.decorators import data_loader
 if 'test' not in globals():

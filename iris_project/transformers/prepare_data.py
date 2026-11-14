@@ -8,7 +8,7 @@ if 'test' not in globals():
     from mage_ai.data_preparation.decorators import test
 
 
-# transformer marks this as a step that changes data coming from an earlier block
+# ransformer marks this as a step that changes data coming from an earlier block
 # 'df' is the 150-row table returned by load_iris, passed in automatically by Mage
 # It splits the data 80/20 and adds a 'split' column labelling each row train or test
 @transformer
