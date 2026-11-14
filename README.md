@@ -434,7 +434,7 @@ All values below were produced by actual runs of the code in this repository.
 - [x] A3: green CI run, red CI run (`test_size=0.3`), fixed run
 - [x] B1–B5: pipeline outputs, ORD-1006 before/after, B4 actuals, B5 PROBLEM output
 - [x] C: `mage run` output, C2 table, confusion matrix and metrics, Mage UI graph with the branch (Cloudflare tunnel)
-- [ ] D: terminals showing dispatcher + drivers and a `REJECTED … NACK` line
+- [x] D: terminals showing dispatcher + drivers and a `REJECTED … NACK` line
 - [x] Bonus: streaming batch output and before / after-batch-1 / after-batch-2 totals
 
 **Submission**
@@ -442,5 +442,5 @@ All values below were produced by actual runs of the code in this repository.
 - [x] `elt/freshcart_elt.ipynb` with all outputs visible
 - [x] `iris_project/` and `iris_project/mage_iris_pipeline.ipynb` with outputs
 - [x] `stream/dispatcher.py`, `stream/driver.py`
-- [ ] Report `RollNo_Name_Pipelines.pdf` (≤ 8 pages + screenshot appendix) with the repo URL, all answers A1–D3,
-      the integration diagram and the reflection
+- [x] Report `RollNo_Name_Pipelines.pdf` (≤ 8 pages + screenshot appendix) with the repo URL, all answers A1–D3,
+      the integration diagram and the reflection (submitted separately, not stored in this repository)
