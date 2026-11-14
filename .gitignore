@@ -1,0 +1,17 @@
+# Secrets (Snowflake login, RabbitMQ URLs) - never commit these
+.env
+
+# Files produced when the pipelines run
+*.pkl
+*.csv
+mage.log
+tunnel.log
+
+# Python cache
+__pycache__/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Local virtual environments
+venv/
+.venv/
