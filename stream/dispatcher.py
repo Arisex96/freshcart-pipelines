@@ -1,4 +1,5 @@
 """Dispatcher: publishes a random ride/food request every 2 seconds to the topic exchange.
+Every 10th request is deliberately bad (it has no "zone" field) to test NACK handling.
 
 Usage:  python dispatcher.py            (runs until Ctrl+C)
         python dispatcher.py 60         (stops after 60 messages)
@@ -45,6 +46,8 @@ try:
             "type": order_type,
             "ts": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         }
+        if count % 10 == 0:
+            del message["zone"]          # every 10th message is bad: no zone field
         channel.basic_publish(exchange=EXCHANGE, routing_key=routing_key, body=json.dumps(message))
         print(f"sent {message['id']}  key={routing_key}  {json.dumps(message)}", flush=True)
         time.sleep(2)

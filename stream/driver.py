@@ -31,6 +31,11 @@ print(f"[{name}] waiting for requests matching '{pattern}'", flush=True)
 
 def on_message(ch, method, properties, body):
     request = json.loads(body)
+    if "zone" not in request:
+        # Bad message: reject it and do not put it back in the queue (it is discarded)
+        print(f"[{name}] REJECTED {request['id']}  key={method.routing_key}  missing 'zone' -> NACK", flush=True)
+        ch.basic_nack(delivery_tag=method.delivery_tag, requeue=False)
+        return
     print(f"[{name}] got {request['id']}  key={method.routing_key}  {request}", flush=True)
     ch.basic_ack(delivery_tag=method.delivery_tag)
 
